@@ -17,7 +17,9 @@ function serverspec() {
         -w /image-test \
         -e IMAGE_ID=$1 \
         jadametz/serverspec \
-        --format documentation spec/
+        --format documentation \
+        --format RspecJunitFormatter --out rspec.xml \
+        spec/
 }
 
 while test $# -gt 0; do
