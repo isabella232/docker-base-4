@@ -22,20 +22,19 @@ function serverspec() {
         spec/
 }
 
-while test $# -gt 0; do
-    case "$1" in
-    (-i | --image)
-        shift
-            serverspec $1
-        shift
-        ;;
-    (-h | --help)
-        usage 0
-        ;;
-    esac
+case "$1" in
+(-i | --image)
     shift
-done
-
-serverspec
+        serverspec $1
+    shift
+    ;;
+(-h | --help)
+    usage 0
+    ;;
+(*)
+    serverspec
+    ;;
+esac
+shift
 
 exit 0
