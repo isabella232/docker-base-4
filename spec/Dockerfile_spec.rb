@@ -1,7 +1,7 @@
 require "serverspec"
 require "docker"
 
-describe "Dockerfile" do
+describe "Docker Image" do
   before(:all) do
     if !ENV['IMAGE_ID'].nil? && !ENV['IMAGE_ID'].empty?
       @image = Docker::Image.get("#{ENV['IMAGE_ID']}")
@@ -19,14 +19,15 @@ describe "Dockerfile" do
     'awk',
     'cut',
     'curl',
-    'dnsutils',
+    'dig',      # dnsutils
     'grep',
     'head',
+    'host',     # dnsutils
     'jq',
     'less',
     'netcat',
     'ngrep',
-    'nslookup',
+    'nslookup', # dnsutils
     'ping',
     'sed',
     'tail',
@@ -34,8 +35,8 @@ describe "Dockerfile" do
     'tr',
     'vim',
   ].each do |pkg|
-    describe package(pkg) do
-      it { should be_installed }
+    describe command("which #{pkg}") do
+      its(:exit_status) { should eq 0 }
     end
   end
 end
