@@ -13,10 +13,10 @@ FROM invocaops/base:production
 
 ### Versioning
 
-We tag every successful build with its SHA. Additionally, if the build is on the `master` branch it'll be tagged `master`. The same with `production`.
+We tag every successful build with its SHA. Additionally, if the build is on the `master` branch it'll be tagged `latest`. `production` will be tagged `production`.
 
 - `invocaops/base:SHA`: Specific build
-- `invocaops/base:master`: Stable changes that have been merged to master after development
+- `invocaops/base:latest`: Stable changes that have been merged to master after development
 - `invocaops/base:production`: This is essentially our `latest`. Except `latest` is bad. So we control it with a merge to `production`.
 
 ## Testing
