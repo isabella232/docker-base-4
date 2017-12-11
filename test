@@ -10,6 +10,10 @@ EOF
   exit $1
 }
 
+function build() {
+    docker build -t invocaops/base .
+}
+
 function serverspec() {
     docker run --rm --name image-test \
         -v /var/run/docker.sock:/var/run/docker.sock \
@@ -30,9 +34,11 @@ while test $# -gt 0; do
     (-h | --help)
         usage 0
         ;;
-    (*)
-        usage 1
-        ;;
     esac
     shift
 done
+
+build
+serverspec
+
+exit 0
