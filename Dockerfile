@@ -7,7 +7,7 @@ ENV BUILD_DEPS '\
     jq \
     ngrep \
     vim \
-'
+    '
 
 RUN apt-get update && apt-get install -y --no-install-recommends $BUILD_DEPS \
     && rm -rf /var/lib/apt/lists/*
