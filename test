@@ -25,8 +25,7 @@ function serverspec() {
 case "$1" in
 (-i | --image)
     shift
-        serverspec $1
-    shift
+    serverspec $1
     ;;
 (-h | --help)
     usage 0
@@ -35,6 +34,5 @@ case "$1" in
     serverspec
     ;;
 esac
-shift
 
 exit 0
