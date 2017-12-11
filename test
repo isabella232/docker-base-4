@@ -1,0 +1,38 @@
+#!/usr/bin/env sh
+
+function usage() {
+  cat <<EOF
+Usage: $0 [OPTION]
+    Test this or an optionally provided target image to meet Invoca's standards
+    -i, --image     If provided, will run the tests against this image
+    -h, --help      Displays this help menu and exits
+EOF
+  exit $1
+}
+
+function serverspec() {
+    docker run --rm --name image-test \
+        -v /var/run/docker.sock:/var/run/docker.sock \
+        -v $(pwd):/image-test \
+        -w /image-test \
+        -e IMAGE_ID=$1 \
+        jadametz/serverspec \
+        --format documentation \
+        --format RspecJunitFormatter --out rspec.xml \
+        spec/
+}
+
+case "$1" in
+(-i | --image)
+    shift
+    serverspec $1
+    ;;
+(-h | --help)
+    usage 0
+    ;;
+(*)
+    serverspec
+    ;;
+esac
+
+exit 0
