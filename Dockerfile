@@ -4,6 +4,7 @@ LABEL maintainer="operations@invoca.com"
 ENV BUILD_DEPS '\
     curl \
     dnsutils \
+    git \
     jq \
     ngrep \
     vim \
