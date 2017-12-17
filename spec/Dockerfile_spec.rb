@@ -20,6 +20,7 @@ describe "Docker Image" do
     'cut',
     'curl',
     'dig',      # dnsutils
+    'git',
     'grep',
     'head',
     'host',     # dnsutils
