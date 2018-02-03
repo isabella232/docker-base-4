@@ -11,7 +11,7 @@ EOF
 }
 
 function serverspec() {
-    docker run --rm --name image-test \
+    docker run --rm -it --name image-test \
         -v /var/run/docker.sock:/var/run/docker.sock \
         -v $(pwd):/image-test \
         -w /image-test \
