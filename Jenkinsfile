@@ -11,7 +11,7 @@ pipeline {
                     def sha = env.GIT_COMMIT
                     def branchName = env.GIT_BRANCH
 
-                    image = new Image(this, imageName, [sha, branch])
+                    image = new Image(this, imageName, [sha, branchName])
                 }
             }
         }
