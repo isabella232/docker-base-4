@@ -12,4 +12,4 @@ ENV BUILD_DEPS '\
 
 RUN apt-get update && apt-get install -y --no-install-recommends $BUILD_DEPS \
     && rm -rf /var/lib/apt/lists/* \
-    && find /etc/cron* /etc/logrotate.d -type f -delete
+    && find /etc/cron.* /etc/logrotate.d -type f -delete
