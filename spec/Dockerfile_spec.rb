@@ -32,7 +32,7 @@ describe "Docker Image" do
     'ping',
     'sed',
     'tail',
-    'top',
+    'top',      # procps
     'tr',
     'vim',
   ].each do |pkg|

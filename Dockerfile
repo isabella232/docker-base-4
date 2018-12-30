@@ -1,4 +1,4 @@
-FROM ubuntu:trusty-20171117
+FROM debian:9
 LABEL maintainer="operations@invoca.com"
 
 ENV BUILD_DEPS '\
@@ -6,7 +6,10 @@ ENV BUILD_DEPS '\
     dnsutils \
     git \
     jq \
+    less \
+    netcat \
     ngrep \
+    procps \
     vim \
     '
 
