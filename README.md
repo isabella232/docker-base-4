@@ -1,5 +1,5 @@
 # docker-base
-This Ubuntu Base Image is used for all of Invoca's Docker images. In order to keep things DRY, we start here with a series of packages that we assert will be in all subsequent images.
+This Debian Base Image is used for all of Invoca's Docker images. In order to keep things DRY, we start here with a series of packages that we assert will be in all subsequent images.
 
 ## Usage
 
@@ -26,8 +26,8 @@ Our `spec/` describes our minimum requirements of a Docker image. If an upstream
 The `test` wrapper can be used to (by default) integration test our base image or, an optional image name can be provided to test other upstream images.
 
 ```bash
-➭ ./test --image ubuntu:14.04
+➭ ./test --image debian:9
 ...
-Finished in 1.73 seconds (files took 0.85913 seconds to load)
-18 examples, 7 failures
+Finished in 3.2 seconds (files took 0.46052 seconds to load)
+19 examples, 11 failures
 ```
