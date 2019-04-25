@@ -2,6 +2,7 @@ FROM ubuntu:trusty-20171117
 LABEL maintainer="operations@invoca.com"
 
 ENV BUILD_DEPS '\
+    apt-transport-https \
     curl \
     dnsutils \
     git \
