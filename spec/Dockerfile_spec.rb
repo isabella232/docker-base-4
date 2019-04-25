@@ -40,4 +40,9 @@ describe "Docker Image" do
       its(:exit_status) { should eq 0 }
     end
   end
+
+  describe file("/usr/lib/apt/methods/https") do
+    it { is_expected.to exist }
+    it { is_expected.to be_file }
+  end
 end
