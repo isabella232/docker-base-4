@@ -26,6 +26,7 @@ describe "Docker Image" do
     'host',     # dnsutils
     'jq',
     'less',
+    'lsof',
     'netcat',
     'ngrep',
     'nslookup', # dnsutils

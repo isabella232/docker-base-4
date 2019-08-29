@@ -7,6 +7,7 @@ ENV BUILD_DEPS '\
     git \
     jq \
     less \
+    lsof \
     netcat \
     ngrep \
     procps \
