@@ -21,6 +21,7 @@ describe "Docker Image" do
     'curl',
     'dig',      # dnsutils
     'git',
+    'gpg',      # gnupg
     'grep',
     'head',
     'host',     # dnsutils

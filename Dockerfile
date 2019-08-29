@@ -5,6 +5,7 @@ ENV BUILD_DEPS '\
     curl \
     dnsutils \
     git \
+    gnupg \
     jq \
     less \
     lsof \
