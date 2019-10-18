@@ -18,6 +18,7 @@ describe "Docker Image" do
   [
     'awk',
     'cut',
+    'cron',
     'curl',
     'dig',      # dnsutils
     'git',
