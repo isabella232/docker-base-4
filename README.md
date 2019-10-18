@@ -6,18 +6,18 @@ This Debian Base Image is used for all of Invoca's Docker images. In order to ke
 Using the base image as a starting point is simple
 
 ```dockerfile
-FROM invocaops/base:production
+FROM invocaops/base:master
 # rest of your Docker file
 # here...
 ```
 
 ### Versioning
 
-We tag every successful build with its SHA. Additionally, if the build is on the `master` branch it'll be tagged `latest`. `production` will be tagged `production`.
+We tag every successful build with its SHA. Additionally, if the build is on the `master` branch it'll be tagged `latest`.
 
 - `invocaops/base:SHA`: Specific build
 - `invocaops/base:latest`: Stable changes that have been merged to master after development
-- `invocaops/base:production`: This is essentially our `latest`. Except `latest` is bad. So we control it with a merge to `production`.
+- `invocaops/base:master`: This is essentially our `latest`. Except `latest` is bad.
 
 ## Testing
 
