@@ -21,18 +21,20 @@ describe "Docker Image" do
     'curl',
     'dig',      # dnsutils
     'git',
+    'gpg',      # gnupg
     'grep',
     'head',
     'host',     # dnsutils
     'jq',
     'less',
+    'lsof',
     'netcat',
     'ngrep',
     'nslookup', # dnsutils
     'ping',
     'sed',
     'tail',
-    'top',
+    'top',      # procps
     'tr',
     'vim',
   ].each do |pkg|
