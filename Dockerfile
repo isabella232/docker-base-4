@@ -11,7 +11,7 @@ ENV BUILD_DEPS '\
     jq \
     less \
     lsof \
-    netcat \
+    netcat-openbsd \
     ngrep \
     procps \
     vim \

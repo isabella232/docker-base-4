@@ -29,7 +29,7 @@ describe "Docker Image" do
     'jq',
     'less',
     'lsof',
-    'netcat',
+    'netcat-openbsd',
     'ngrep',
     'nslookup', # dnsutils
     'ping',
