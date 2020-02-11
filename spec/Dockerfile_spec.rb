@@ -10,9 +10,10 @@ describe "Docker Image" do
       @image.tag(repo: 'invocaops/base', tag: 'test')
     end
 
-    set :os, family: :ubuntu
+    set :os, family: :debian
     set :backend, :docker
     set :docker_image, @image.id
+    set :docker_container_create_options, { 'Entrypoint' => ['bash'] }
   end
 
   [
