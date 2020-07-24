@@ -13,13 +13,17 @@ EOF
 function serverspec() {
     docker run --rm --name image-test \
         -v /var/run/docker.sock:/var/run/docker.sock \
-        -v $(pwd):/image-test \
+        -v $(pwd):/image-test/ \
+        -v $(pwd)/reports/:/reports/ \
         -w /image-test \
         -e IMAGE_ID=$1 \
         jadametz/serverspec \
         --format documentation \
         --format RspecJunitFormatter --out rspec.xml \
         spec/
+    ls 
+    ls spec
+    $(pwd)
 }
 
 case "$1" in

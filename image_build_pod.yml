@@ -1,0 +1,52 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+      jenkins/web: 'true'
+  namespace: jenkins
+  name: web
+spec:
+  tolerations:
+  - key: dedicated
+    operator: Equal
+    value: jenkins
+    effect: NoSchedule
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: kops.k8s.io/instancegroup
+            operator: In
+            values:
+            - jenkins
+  containers:
+  - name: docker
+    image: docker:19.03.8
+    tty: true
+    resources:
+      requests:
+        memory: "1024Mi"
+    command:
+    - cat
+    volumeMounts:
+    - name: docker-sock
+      mountPath: /var/run/docker.sock
+  - name: test
+    image: jadametz/serverspec
+    tty: true
+    resources:
+      requests:
+        memory: "128Mi"
+    command:
+    - cat
+    volumeMounts:
+    - name: docker-sock
+      mountPath: /var/run/docker.sock
+  volumes:
+  - name: docker-sock
+    hostPath:
+      path: /var/run/docker.sock
+      type: Socket
+
