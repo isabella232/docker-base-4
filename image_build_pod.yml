@@ -33,7 +33,7 @@ spec:
     volumeMounts:
     - name: docker-sock
       mountPath: /var/run/docker.sock
-  - name: test
+  - name: rspec
     image: jadametz/serverspec
     tty: true
     resources:

@@ -13,7 +13,7 @@ pipeline {
     stage('Test') {
       agent { 
         kubernetes { 
-          defaultContainer "test"
+          defaultContainer "rspec"
           yamlFile "./image_build_pod.yml"
         }
       }
