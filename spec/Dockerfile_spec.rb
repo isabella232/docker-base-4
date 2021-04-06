@@ -38,6 +38,7 @@ describe "Docker Image" do
     'tail',
     'top',      # procps
     'tr',
+    'update-ca-certificates',
     'vim',
   ].each do |pkg|
     describe command("which #{pkg}") do
