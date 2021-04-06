@@ -3,6 +3,7 @@ LABEL maintainer="operations@invoca.com"
 
 ENV BUILD_DEPS '\
     apt-transport-https \
+    ca-certificates \
     cron \
     curl \
     dnsutils \
