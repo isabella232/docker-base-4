@@ -1,6 +1,6 @@
 ---
 # Constants
-IMAGE_NAME: &IMAGE_NAME invocaops/foobar
+IMAGE_NAME: &IMAGE_NAME invocaops/base
 
 # Pipeline Steps
 steps:
